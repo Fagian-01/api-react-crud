@@ -1,0 +1,101 @@
+/* Fully revamped modern design system for Auth-Crud-React */
+
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,400;1,500&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    body {
+        font-family: "Plus Jakarta Sans", sans-serif;
+        @apply bg-gradient-to-tr from-slate-50 via-slate-100/50 to-indigo-50/30 min-h-screen text-slate-800 antialiased selection:bg-indigo-500 selection:text-white;
+    }
+    h1, h2, h3, h4, h5, h6 {
+        font-family: "Outfit", sans-serif;
+    }
+}
+
+@layer components {
+    input[type="text"],
+    input[type="email"],
+    input[type="password"],
+    input[type="search"],
+    input[type="tel"],
+    input[type="url"], textarea {
+        @apply block w-full rounded-xl border-slate-200/80 p-3 text-slate-800 shadow-sm transition-all duration-300 ease-out placeholder:text-slate-400 focus:border-indigo-500 focus:ring-4 focus:ring-indigo-100 sm:text-sm bg-white/80 backdrop-blur-sm border;
+    }
+    
+    label {
+        @apply block text-sm font-semibold tracking-wide text-slate-700 mb-1.5 first-letter:capitalize;
+    }
+    
+    header {
+        @apply border-b border-slate-200/50 bg-white/70 backdrop-blur-md sticky top-0 z-50 transition-all duration-300;
+    }
+    
+    nav {
+        @apply py-4 px-6 max-w-6xl mx-auto flex items-center justify-between;
+    }
+    
+    main {
+        @apply max-w-4xl mx-auto px-4 py-8;
+    }
+    
+    .primary-btn {
+        @apply flex w-full justify-center items-center rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 px-4 py-3 text-sm font-semibold text-white shadow-md shadow-indigo-200/50 hover:from-blue-700 hover:to-indigo-700 hover:shadow-lg hover:shadow-indigo-300/60 hover:-translate-y-0.5 transition-all duration-300 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 disabled:from-slate-400 disabled:to-slate-400 disabled:cursor-wait disabled:translate-y-0 disabled:shadow-none;
+    }
+    
+    .text-link {
+        @apply font-semibold text-indigo-600 hover:text-indigo-700 transition-colors duration-200;
+    }
+    
+    .nav-link {
+        @apply text-slate-600 hover:bg-slate-100 hover:text-indigo-600 rounded-xl px-4 py-2 text-sm font-semibold transition-all duration-200;
+    }
+
+    .nav-link-active {
+        @apply bg-indigo-50 text-indigo-600 rounded-xl px-4 py-2 text-sm font-semibold transition-all duration-200;
+    }
+    
+    .title {
+        @apply my-6 text-center text-3xl font-extrabold tracking-tight text-slate-900 bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 bg-clip-text text-transparent;
+    }
+    
+    .error {
+        @apply text-xs font-medium text-rose-500 mt-1.5 flex items-center gap-1;
+    }
+    
+    table {
+        @apply w-full text-sm text-left rounded-2xl shadow-xl shadow-slate-100 overflow-hidden mb-6 table-auto bg-white border border-slate-100;
+    }
+    
+    thead {
+        @apply text-xs uppercase font-bold tracking-wider border-b border-slate-100 text-slate-500 bg-slate-50/50;
+    }
+    
+    tbody tr {
+        @apply hover:bg-slate-50/80 transition-colors duration-150 border-b border-slate-50 last:border-0;
+    }
+    
+    th {
+        @apply px-6 py-4;
+    }
+    
+    td {
+        @apply px-6 py-4 text-slate-700;
+    }
+    
+    .avatar {
+        @apply w-10 h-10 rounded-full overflow-hidden object-center object-cover border-2 border-white shadow-md;
+    }
+
+    .avatar-placeholder {
+        @apply w-9 h-9 rounded-full flex items-center justify-center text-sm font-semibold text-indigo-600 bg-indigo-100 border-2 border-indigo-50 shadow-sm;
+    }
+
+    /* Custom elegant card wrapper */
+    .post-card {
+        @apply bg-white/80 backdrop-blur-sm border border-slate-200/60 rounded-2xl p-6 shadow-sm hover:shadow-xl hover:shadow-indigo-100/50 hover:border-indigo-200/80 hover:-translate-y-1 transition-all duration-300 ease-out;
+    }
+}
